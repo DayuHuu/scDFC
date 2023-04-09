@@ -18,6 +18,6 @@ Sklearn --- 0.24.2
 
 # Usage
 ## inpput 
-All the original tested datasets (Yan, Biase, Klein, Romanov, Muraro, Björklund, PBMC, Zhang, Guo, Brown.1, Brown.2, Chung, Sun.1, Sun.2, Sun.3 and Habib) can be downloaded.
+All the original tested datasets (Biase, Björklund, Brown, Chung, Sun.1, Sun.2, Sun.3 and Habib) can be downloaded.
 
-For example, the original expression matrix ori_data.tsv of dataset Biase is downloaded and put into /data/Biase. Before clustering, low-quality cells and genes can be filtered by running the following command:
+For example, the original expression matrix data.tsv of dataset Biase is downloaded and put into /data/Biase. Before clustering, low-quality cells and genes can be filtered by running the following command:
