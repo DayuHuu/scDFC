@@ -16,8 +16,8 @@ Numpy --- 1.19.5
 Scipy --- 1.5.4
 
 Pandas --- 1.1.5
-
-scikit-learn --- 0.19.0
+S
+Scikit-learn --- 0.19.0
 
 # Implement
 ## The link of datasets 
