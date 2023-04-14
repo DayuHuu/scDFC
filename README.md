@@ -3,7 +3,9 @@ scDFC is a deep fusion clustering method for single-cell RNA-seq data. Existing 
 
 # Requirements
 
-Python --- 3.6 
+Python --- 3.6.2
+
+Pandas --- 1.1.5
 
 Tensorflow --- 1.12.0 
 
@@ -15,7 +17,7 @@ Scipy --- 1.5.4
 
 Pandas --- 1.1.5
 
-Sklearn --- 0.24.2
+scikit-learn --- 0.19.0
 
 # Implement
 ## The link of datasets 
