@@ -40,7 +40,7 @@ Brown:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137710
 
 Habib:
 
-## demo
+## Examples
 The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should type the iuput of code:
 ```python
 parser.add_argument('--dataset_str', default='Biase', type=str, help='name of dataset')
