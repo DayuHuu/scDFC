@@ -22,9 +22,9 @@ Sklearn --- 0.24.2
 
 Biase:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57249
 
-Darmanis:
+Darmanis:https://pubmed.ncbi.nlm.nih.gov/26060301/
 
-Enge:
+Enge:https://pubmed.ncbi.nlm.nih.gov/28965763/
 
 Bjorklund:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70580
 
@@ -48,5 +48,9 @@ parser.add_argument('--dataset_str', default='Biase', type=str, help='name of da
 parser.add_argument('--n_clusters', default=3, type=int, help='expected number of clusters')
 
 parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, help='true labels')
+```
+## Run 
+```python
+python scDFC.py
 ```
 
