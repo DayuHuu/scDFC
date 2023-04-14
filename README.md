@@ -17,12 +17,22 @@ Pandas --- 1.1.5
 
 Sklearn --- 0.24.2
 
-# Usage
-## inpput 
-All the original tested datasets (Biase, Björklund, Brown, Chung, Sun.1, Sun.2, Sun.3 and Habib) can be downloaded.
+# Implement
+## input 
+The link of datasets 
+Biase:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57249
+Darmanis
+Enge
+Bjorklund:
+Sun.1 
+Fink
+Sun.2
+Sun.3
+Brown
+Habib
 
-## implement
-The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should only change the top 3 lines as below:
+## demo
+The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should type the iuput of code:
 ```python
 parser.add_argument('--dataset_str', default='Biase', type=str, help='name of dataset')
 
