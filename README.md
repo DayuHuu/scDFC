@@ -30,7 +30,7 @@ Bjorklund:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70580
 
 Sun.1:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
 
-Fink:
+Fink:https://www.sciencedirect.com/science/article/abs/pii/S1534580722004932
 
 Sun.2:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
 
@@ -38,7 +38,6 @@ Sun.3:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
 
 Brown:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137710
 
-Habib:
 
 ## Examples
 The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should type the iuput of code:
