@@ -16,7 +16,7 @@ Numpy --- 1.19.5
 Scipy --- 1.5.4
 
 Pandas --- 1.1.5
-S
+
 Scikit-learn --- 0.19.0
 
 # Implement
