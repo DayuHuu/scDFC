@@ -59,12 +59,11 @@ python scDFC.py
 ## Citation 
 Please cite our paper:
 
-```python
 @article{hu2023scdfc,
   title={scDFC: A deep fusion clustering method for single-cell RNA-seq data},
   author={Hu, Dayu and Liang, Ke and Zhou, Sihang and Tu, Wenxuan and Liu, Meng and Liu, Xinwang},
   journal={Briefings in Bioinformatics},
-  pages={bbad216},
+  pages={bbad216}
   year={2023},
   publisher={Oxford University Press}
 }
