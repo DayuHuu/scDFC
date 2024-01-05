@@ -44,11 +44,9 @@ Brown:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137710
 ## Examples
 The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should type the iuput of code:
 ```python
-parser.add_argument('--dataset_str', default='Biase', type=str, help='name of dataset')
-
-parser.add_argument('--n_clusters', default=3, type=int, help='expected number of clusters')
-
-parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, help='true labels')
+parser = argparse.ArgumentParser(description='scEMC')
+parser.add_argument('--n_clusters', default=data_para['K'], type=int)
+parser.add_argument('--lr', default=1, type=float)
 ```
 ## Run 
 ```python
