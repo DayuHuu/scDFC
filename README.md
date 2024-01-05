@@ -56,16 +56,10 @@ parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, he
 ```python
 python scDFC.py
 ```
-## Citation 
-Please cite our paper:
 
-@article{hu2023scdfc,
-  title={scDFC: A deep fusion clustering method for single-cell RNA-seq data},
-  author={Hu, Dayu and Liang, Ke and Zhou, Sihang and Tu, Wenxuan and Liu, Meng and Liu, Xinwang},
-  journal={Briefings in Bioinformatics},
-  pages={bbad216}
-  year={2023},
-  publisher={Oxford University Press}
-}
-```
+### Citation
+If you find this work useful, please consider citing:
+
+Hu, D., Liang, K., Zhou, S., Tu, W., Liu, M., & Liu, X. (2023). scDFC: A deep fusion clustering method for single-cell RNA-seq data. *Briefings in Bioinformatics*, bbad216. Oxford University Press.
+
 
