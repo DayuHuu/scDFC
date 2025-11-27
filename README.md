@@ -98,6 +98,15 @@ parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, he
 
 -----
 
+## 📧 Contact
+
+If you have any questions about the code or the paper, please feel free to contact:
+
+**Dayu Hu**
+Email: [hudy@bmie.neu.edu.cn](mailto:hudy@bmie.neu.edu.cn)
+
+-----
+
 ## 📝 Citation
 
 If you find this work useful, please consider citing:
