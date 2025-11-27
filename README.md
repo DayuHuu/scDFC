@@ -1,65 +1,125 @@
-# scDFC
-scDFC is a deep fusion clustering method for single-cell RNA-seq data. Existing methods either consider the attribute information of each cell or the structure information between different cells. In other words, they cannot sufficiently make use of all of this information simultaneously. To this end, we propose a novel single-cell deep fusion clustering model, which contains two modules, i.e., an **attributed feature** clustering module and a **structure-attention** feature clustering module. More concretely, two elegantly designed autoencoders are built to handle both features regardless of their data types.
+# scDFC: Deep Fusion Clustering for Single-Cell RNA-seq Data
 
-# Requirements
+[![Python](https://img.shields.io/badge/Python-3.6.2-blue.svg)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/TensorFlow-1.12.0-orange.svg)](https://www.tensorflow.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Python --- 3.6.2
+## 📖 Overview
 
-Pandas --- 1.1.5
+**scDFC** is a novel deep fusion clustering framework designed specifically for Single-Cell RNA-seq (scRNA-seq) data analysis.
 
-Tensorflow --- 1.12.0 
+Existing methods either consider the attribute information of each cell or the structure information between different cells independently. In other words, they cannot sufficiently make use of all heterogeneous information simultaneously. To this end, **scDFC** proposes a novel model containing two modules:
 
-Keras --- 2.1.0
+1.  **Attributed Feature Clustering Module**: Extracts deep representations of gene expression profiles.
+2.  **Structure-Attention Feature Clustering Module**: Captures high-order topological relationships between cells.
 
-Numpy --- 1.19.5
+More concretely, two elegantly designed autoencoders are built to handle both features regardless of their data types, achieving superior clustering performance.
 
-Scipy --- 1.5.4
+> **Note**: For detailed methodology, please refer to our paper published in *Briefings in Bioinformatics*.
 
-Pandas --- 1.1.5
 
-Scikit-learn --- 0.19.0
 
-# Implement
-## The link of datasets 
+## 🛠 Requirements
 
-Biase:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57249
+Please ensure your environment meets the following requirements:
 
-Darmanis:https://pubmed.ncbi.nlm.nih.gov/26060301/
+* **Python** == 3.6.2
+* **Tensorflow** == 1.12.0
+* **Keras** == 2.1.0
+* **Numpy** == 1.19.5
+* **Pandas** == 1.1.5
+* **Scipy** == 1.5.4
+* **Scikit-learn** == 0.19.0
 
-Enge:https://pubmed.ncbi.nlm.nih.gov/28965763/
+### Installation
+You can install the dependencies using the following command:
 
-Bjorklund:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70580
+```bash
+pip install tensorflow==1.12.0 keras==2.1.0 numpy==1.19.5 pandas==1.1.5 scipy==1.5.4 scikit-learn==0.19.0
+````
 
-Sun.1:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
+-----
 
-Fink:https://www.sciencedirect.com/science/article/abs/pii/S1534580722004932
+## 📂 Data Availability
 
-Sun.2:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
+We evaluated scDFC on several benchmark scRNA-seq datasets. The original data sources can be accessed via the links below:
 
-Sun.3:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066
+| Dataset | Accession / Source | Link |
+| :--- | :--- | :--- |
+| **Biase** | GSE57249 | [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57249) |
+| **Darmanis**| PubMed 26060301 | [PubMed](https://pubmed.ncbi.nlm.nih.gov/26060301/) |
+| **Enge** | PubMed 28965763 | [PubMed](https://pubmed.ncbi.nlm.nih.gov/28965763/) |
+| **Bjorklund** | GSE70580 | [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE70580) |
+| **Sun (1-3)** | GSE128066 | [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE128066) |
+| **Fink** | Science Direct | [Article](https://www.sciencedirect.com/science/article/abs/pii/S1534580722004932) |
+| **Brown** | GSE137710 | [NCBI GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137710) |
 
-Brown:https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE137710
+-----
 
-## Examples
+## 🚀 Usage
 
-The example expression matrix data.tsv of dataset Biase is put into data/Biase. To change datasets, you should type the iuput of code:
-```python
-parser.add_argument('--dataset_str', default='Biase', type=str, help='name of dataset')
+### 1\. Data Preparation
 
-parser.add_argument('--n_clusters', default=3, type=int, help='expected number of clusters')
+The example expression matrix `data.tsv` for the **Biase** dataset is put into `data/Biase`. The directory structure should look like this:
 
-parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, help='true labels')
-
-# ... other arguments ...
+```text
+data/
+├── Biase/
+│   ├── data.tsv
+│   └── label.ann
+└── [Your_Dataset_Name]/
+    ├── data.tsv
+    └── label.ann
 ```
-## Run 
-```python
+
+### 2\. Run the Model
+
+To run the model with the default dataset (**Biase**), simply execute:
+
+```bash
 python scDFC.py
 ```
 
-### Citation
+### 3\. Arguments
+
+To change datasets or modify parameters, use the following arguments:
+
+```bash
+python scDFC.py --dataset_str Brown --n_clusters 4
+```
+
+**Key Parameters in `scDFC.py`:**
+
+```python
+parser.add_argument('--dataset_str', default='Biase', type=str, help='name of dataset')
+parser.add_argument('--n_clusters', default=3, type=int, help='expected number of clusters')
+parser.add_argument('--label_path', default='data/Biase/label.ann', type=str, help='true labels')
+```
+
+-----
+
+## 📝 Citation
+
 If you find this work useful, please consider citing:
 
-Hu, D., Liang, K., Zhou, S., Tu, W., Liu, M., & Liu, X. (2023). scDFC: A deep fusion clustering method for single-cell RNA-seq data. *Briefings in Bioinformatics*, bbad216. Oxford University Press.
+**Text:**
 
+> Hu, D., Liang, K., Zhou, S., Tu, W., Liu, M., & Liu, X. (2023). scDFC: A deep fusion clustering method for single-cell RNA-seq data. *Briefings in Bioinformatics*, bbad216. Oxford University Press.
 
+**BibTeX:**
+
+```bibtex
+@article{hu2023scdfc,
+  title={scDFC: A deep fusion clustering method for single-cell RNA-seq data},
+  author={Hu, Dong and Liang, Ke and Zhou, Sihang and Tu, Wenxuan and Liu, Meng and Liu, Xinwang},
+  journal={Briefings in Bioinformatics},
+  volume={24},
+  number={4},
+  pages={bbad216},
+  year={2023},
+  publisher={Oxford University Press}
+}
+```
+
+```
+```
